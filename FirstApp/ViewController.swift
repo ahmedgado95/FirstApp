@@ -14,6 +14,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func gotoSecondPage(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController {
+            vc.navigationItem.hidesBackButton = true
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
